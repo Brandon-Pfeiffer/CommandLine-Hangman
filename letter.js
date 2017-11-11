@@ -1,18 +1,14 @@
-// letter.js should control whether or not a letter appears as a "_" or as itself on-screen.
-// constructor file
-
 var game = require("./game.js");
 
 var Letter = function(word) {
-	this.inputWord
-	 = word;
+	this.inputWord = word;
 	this.spaceholder = "",
 
-	this.initialPrint = function(daWord){
+	this.initialPrint = function(frodo){
 		this.spaceholder = "";
-		for (var n = 0; n < daWord.length; n++) {
+		for (var n = 0; n < frodo.length; n++) {
 			
-			if (/[a-zA-Z]/.test(daWord[n])){
+			if (/[a-zA-Z]/.test(frodo[n])){
 				this.spaceholder += "_ ";
 			} else {
 				this.spaceholder += "  ";
@@ -36,10 +32,10 @@ var Letter = function(word) {
 		
 	}
 
-	this.correctGuess = function(alpha, daWord){
+	this.correctGuess = function(alpha, frodo){
 		var correct = 0;
-		for (var n = 0; n < daWord.length; n++) {			
-			if (alpha == daWord[n].toLowerCase()){
+		for (var n = 0; n < frodo.length; n++) {			
+			if (alpha == frodo[n].toLowerCase()){
 				this.changeSpaces(n);
 				correct++;
 			}

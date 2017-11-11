@@ -1,7 +1,3 @@
-// word.js should contain all of the methods which will check the letters guessed versus the random word selected.
-// constuctor file
-
-
 var game = require("./game.js");
 
 var Word = function(word){
